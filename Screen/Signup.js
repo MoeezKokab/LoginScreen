@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
+import { Input } from 'react-native-elements';
 
 
 const SignUp = (props) => {
@@ -28,24 +29,24 @@ const SignUp = (props) => {
     <View style={styles.container}>
 
 
-      <TextInput
+      <Input
         label='ID'
         value={ID}
         onChangeText={text => setID(text)}
       />
-      <TextInput
+      <Input
         label='password'
         value={password}
 
         onChangeText={text => setPassword(text)}
       />
-      <TextInput
+      <Input
         label='number'
         value={number}
 
         onChangeText={text => setNumber(text)}
       />
-      <TextInput
+      <Input
         label='mail'
         value={mail}
         onChangeText={text => setMail(text)}
@@ -64,7 +65,7 @@ const SignUp = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#dff4f7',
     
   },
 });

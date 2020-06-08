@@ -1,8 +1,7 @@
 import React ,{useState}from 'react';
-import { StyleSheet, Text, View , Alert} from 'react-native';
-import { TextInput ,Button } from 'react-native-paper';
-import SignUp from './Signup';
-import PasswordInputText from 'react-native-hide-show-password-input'
+import { StyleSheet, View , Alert} from 'react-native';
+import { Button } from 'react-native-paper';
+
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
 
@@ -17,14 +16,7 @@ import { Input } from 'react-native-elements';
 
 const  Login=(props) =>{
 
-  const chck =()=> Data.findIndex(item=>{
-    if (item.id === ID ){
-     
-      return true 
-    }
-else
-return false
-  })
+  
 
 
   const [Data,SetData] =useState([{id:'moeez',password:'moeez'},{id:'moeez',password:'Moeez'}])
@@ -65,7 +57,7 @@ const [password,setPassword]=useState("")
     <View style={styles.container}>
             
 
-<Input placeholder="User ID" secureTextEntry={true}
+<Input placeholder="User ID" 
   label='ID'
   value={ID}
   onChangeText={text =>setID(text )}
@@ -89,9 +81,7 @@ const [password,setPassword]=useState("")
         />
       } />
     <View style={{alignItems:'center'}}>
-    <Button  icon="login" mode="Outlined" onPress={() => LoginCheck()}>
-    Login
-  </Button>
+   
   <View style={{alignItems:'center'}}>
     
 
@@ -104,8 +94,12 @@ const [password,setPassword]=useState("")
     flexDirection:'row',
     flex:1,
    margin: 16,
+   alignContent:'space-around',
+   justifyContent:"space-around"
     }}>
-    <Text>Sign up</Text>
+    <Button  icon="login" mode="Outlined" onPress={() => LoginCheck()}>
+    Login
+  </Button>
     <Button  icon="login" mode="Outlined" onPress={()=> props.navigation.navigate('Signup',{AddData:AddData})} style={{marginTop:-9,marginLeft:70}}>
       SignUp
   </Button>

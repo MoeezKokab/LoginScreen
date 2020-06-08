@@ -9,21 +9,19 @@ import SignUp from './Screen/Signup';
 
  function App() {
   const Stack = createStackNavigator()
-  return (
   
- <Stack.Navigator headerMode='screen'>
+}
+
+export default ()=>
+{const Stack = createStackNavigator()
+return(<NavigationContainer>
+  
+  <Stack.Navigator headerMode='screen'>
 <Stack.Screen name="Login" component={Login} />
 <Stack.Screen name="Home" component={Home} />
 <Stack.Screen name="Signup" component={SignUp} />
 </Stack.Navigator>
-
-
-  );
-}
-
-export default ()=>(<NavigationContainer>
-  <App />
-</NavigationContainer>)
+</NavigationContainer>)}
 
 const styles = StyleSheet.create({
   container: {
